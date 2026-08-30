@@ -1,0 +1,20 @@
+name: Artillery Performance Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  performance-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Artillery test
+        run: npx artillery run load-test.yml
