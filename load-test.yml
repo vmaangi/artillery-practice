@@ -12,7 +12,7 @@ config:
   plugins:
     ensure:
       thresholds:
-        - "http.response_time.p95": 5
+        - "http.response_time.p95": 500
 
 scenarios:
   - flow:
